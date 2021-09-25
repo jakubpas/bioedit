@@ -5,5 +5,32 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Avalonia.NETCoreApp.MainWindow"
         Title="Avalonia.NETCoreApp">
-    Welcome to Avalonia!
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" VerticalAlignment="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open..."/>
+                <MenuItem Header="_Save..."/>
+                <Separator/>
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="Copy"/>
+                <MenuItem Header="Paste"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Align"/>
+                <MenuItem Header="Tree"/>
+            </MenuItem>
+        </Menu>
+        <ListBox Items="{Binding Items}">
+            <ListBox.Styles>
+                <!-- Give the ListBoxItems a fixed with of 100 and right-align them -->
+                <Style Selector="ListBoxItem">
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="HorizontalAlignment" Value="Right"/>
+                </Style>
+            </ListBox.Styles>
+        </ListBox>
+        
+    </DockPanel>
 </Window>
